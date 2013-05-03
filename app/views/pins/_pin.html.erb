@@ -3,11 +3,23 @@
 	<p class="description">
 		<%= pin.description %>
 	</p>
-	<p>
+	
 		<strong>
 					Posted by <%= link_to pin.user.name, pin.user %>
 		</strong>
+	<p class="right">
+										<%= pluralize pin.reputation_for(:votes).to_i, "vote" %>
 	</p>
+	<br><br>
+	<div>
+	
+		<p class="right2">
+		<%= link_to image_tag("thumbs_dn.png", :style => "width:36px;height:36px"), vote_pin_path(pin, type: "down"), method: "post" %>
+	
+	<p class="right">
+		<%= link_to image_tag("thumbs_up.png", :style => "width:36px;height:36px"), vote_pin_path(pin, type: "up"), method: "post" %>
+	</p>
+</div>
 	<% if current_user == pin.user %>
 		<p>
 			<%= link_to 'Edit', edit_pin_path(pin) %>

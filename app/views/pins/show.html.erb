@@ -2,12 +2,22 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<%= image_tag @pin.image %>
-			<p>
+			<p class="description">
 			  <%= @pin.description %>
 			</p>
-			<p> Posted by
-			  <%= @pin.user.name %>
-			</p>
+			<div>
+				 Posted by
+			  	<%= @pin.user.name %>  
+				
+				<p class="right">
+			  	<%= pluralize @pin.reputation_for(:votes).to_i, "vote" %>
+				</p>
+			</div>
+
+
+			
+
+
 			<% if current_user == @pin.user %>
 				<%= link_to 'Edit', edit_pin_path(@pin) %> |
 			<% end %>

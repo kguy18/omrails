@@ -51,3 +51,28 @@ body {
 .description {
 	margin: 10px 0 5px;
 }
+
+.voter {
+	padding: 5px;
+	border-image-width: 10px;
+	width: 36px;
+	height: 36px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	border-radius: 5px;
+}
+
+.right {
+	float:right;
+	width:55px;
+	height: 36px;
+}
+
+.right2 {
+	float:right;
+	width: 50px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+
+}
